@@ -29,7 +29,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
-# Run 'annotate app/models/[model file]' to populate info about that model's schema in the model file 
+# Run 'annotate app/models/[model file]' to populate info about that model's schema in the model file
 gem 'annotate'
 
 # Use Redis adapter to run Action Cable in production
@@ -40,6 +40,9 @@ gem 'annotate'
 
 # Use Devise for user authentication
 gem 'devise'
+
+gem 'simple_form'
+gem 'haml-rails'
 
 group :development, :test do
   # Call 'binding.pry' anywhere in the code to stop execution and get a debugger console
