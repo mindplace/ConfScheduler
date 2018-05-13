@@ -1,0 +1,11 @@
+%h1 Conferences
+
+- @conferences.each do |conf|
+  %a{ href: conference_show_path(url: conf.url) }
+    %h2= conf.name
+
+  %p= conf.description
+  -# %strong= conf.location
+  %p= conf.start_day
+  %p= conf.end_day
+  %p= "#{conf.events.count} Events"

@@ -11,9 +11,10 @@ Rails.application.routes.draw do
 
   # -- Routes -----------------------------------------------------------------------------------------
 
+  resources :users
   get "profile", to: "users#show", as: "profile_show"
 
+  resources :conferences
   get ":url", to: 'conferences#show', as: "conference_show"
 
-  resources :users
 end

@@ -1,0 +1,20 @@
+%h2= @conference.name
+%p= @conference.description
+-# %strong= @conference.location
+%p= @conference.start_day
+%p= @conference.end_day
+%p= "#{@conference.events.count} Events"
+
+%hr
+
+%h3 Events
+
+- @events.each do |event|
+  %h4= event.name
+  %p= event.description
+  %p= event.location
+  %p= event.starts
+  %p= event.ends
+  %p= "#{event.attendees.count} Attendees"
+
+%a{ href: conferences_path } Back to Conferences List

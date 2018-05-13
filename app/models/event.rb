@@ -19,6 +19,6 @@ class Event < ApplicationRecord
   belongs_to :conference
 
   has_many :event_attendees
-  has_many :users, through: :event_attendees
+  has_many :attendees, through: :event_attendees, source: :user
 
 end
