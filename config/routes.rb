@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get "profile", to: "users#show", as: "profile_show"
 
-  get ":conference_name", to: 'conferences#show', as: "conference_show"
+  get ":url", to: 'conferences#show', as: "conference_show"
 
   resources :users
 end

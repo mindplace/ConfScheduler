@@ -10,10 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180513032127) do
+ActiveRecord::Schema.define(version: 20180513044847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "conf_attendees", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "conference_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conference_id"], name: "index_conf_attendees_on_conference_id"
+    t.index ["user_id"], name: "index_conf_attendees_on_user_id"
+  end
+
+  create_table "conferences", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "url", null: false
+    t.text "description"
+    t.date "start_day", null: false
+    t.date "end_day", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name", "url"], name: "index_conferences_on_name_and_url", unique: true
+  end
+
+  create_table "event_attendees", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_attendees_on_event_id"
+    t.index ["user_id"], name: "index_event_attendees_on_user_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "host", null: false
+    t.text "description"
+    t.string "location"
+    t.bigint "conference_id"
+    t.datetime "starts"
+    t.datetime "ends"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conference_id"], name: "index_events_on_conference_id"
+    t.index ["name"], name: "index_events_on_name", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
