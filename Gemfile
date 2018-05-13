@@ -44,6 +44,9 @@ gem 'devise'
 gem 'simple_form'
 gem 'haml-rails'
 
+# Use jQuery with UJS
+gem 'jquery-rails'
+
 group :development, :test do
   # Call 'binding.pry' anywhere in the code to stop execution and get a debugger console
   gem 'pry-rails'
