@@ -29,19 +29,22 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
+# Run 'annotate app/models/[model file]' to populate info about that model's schema in the model file 
+gem 'annotate'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use Devise for user authentication
+gem 'devise'
+
 group :development, :test do
   # Call 'binding.pry' anywhere in the code to stop execution and get a debugger console
   gem 'pry-rails'
-  
+
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_bot', '~> 4.8.2'
   gem 'shoulda-matchers', '~> 3.1', require: false
