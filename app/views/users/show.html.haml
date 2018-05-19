@@ -1,11 +1,19 @@
-%h1 My Profile
+- content_for(:title, "Profile - ConfScheduler")
 
-%div
-    %strong Email:
-    %span= current_user.email
+.bg-gray.section.section-hero.section-hero.section
+    .container.grid-md.grid-hero
+        %h1 My Profile
 
-%hr
+        %p
+            %strong Email:
+            %span= current_user.email
 
-%h2 My Conferences
+.section.section-hero
+    .container.grid-md
+        %h2 My Conferences
+        .columns
+            = render partial: "conferences/conference", collection: current_user.conferences, locals: { conference: current_user.conferences }
 
-= render partial: "conferences/conference", collection: current_user.conferences, locals: { conference: current_user.conferences }
+.section.section-hero.text-center.bg-gray
+    .container.grid-md
+        %a.btn{ href: conferences_path } All Conferences
