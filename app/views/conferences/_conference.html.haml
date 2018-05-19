@@ -1,11 +1,18 @@
-%a{ href: conference_show_path(url: conference.url) }
-  %h2= conference.name
+.column.col-4.col-xs-12
+    .card
+        .card-image
+        .card-header
+            %h2= conference.name
 
-  %p= conference.description
-  -# %strong= conference.location
-  %p= conference.start_date
-  %p= conference.end_date
-  %p= "#{conference.events.count} Events"
+        .card-body
+            %p= conference.description
+            -# %strong= conference.location
+            %p= conference.start_date
+            %p= conference.end_date
+            %p= "#{conference.events.count} Events"
 
-- if attending_conference?(conference)
-  = link_to "Attend", conference_events_path(conference_id: conference.id), method: :post
+        .card-footer
+            %a{ href: conference_show_path(url: conference.url) } View
+
+            - unless attending_conference?(conference)
+                = link_to "Attend", conference_events_path(conference_id: conference.id), method: :post

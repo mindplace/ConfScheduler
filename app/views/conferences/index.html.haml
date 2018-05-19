@@ -1,3 +1,5 @@
-%h1 Conferences
+.container
+    %h1 Conferences
 
-= render partial: "conference", collection: @conferences, locals: { conference: @conferences }
+    .columns
+        = render partial: "conference", collection: @conferences, locals: { conference: @conferences }

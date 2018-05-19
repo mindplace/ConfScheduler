@@ -1,9 +1,16 @@
-= render partial: "conference", locals: { conference: @conference }
+.bg-gray
+    %h1= @conference.name
+    %p= @conference.description
+    %p= @conference.start_date
+    %p= @conference.end_date
 
-%hr
+    - unless attending_conference?(@conference)
+        = link_to "Attend", conference_conf_attendees_path(conference_id: @conference.id), method: :post
+    - else
+        %strong You're attending.
 
-%h3 Events
+.container
+    .columns
+        = render partial: "events/event", collection: @events, locals: { event: @events }
 
-= render partial: "events/event", collection: @events, locals: { event: @events }
-
-%a{ href: conferences_path } Back to Conferences List
+    %a.btn{ href: conferences_path } Back to Conferences List

@@ -9,8 +9,8 @@ class ConfAttendeesController < ApplicationController
     else
       flash[:error] = "Something went wrong."
     end
-    
-    redirect_to conference_path(url: @conference.url)
+
+    redirect_to conference_show_path(url: @conference.url)
   end
 
 end

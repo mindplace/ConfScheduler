@@ -7,3 +7,5 @@
 %hr
 
 %h2 My Conferences
+
+= render partial: "conferences/conference", collection: current_user.conferences, locals: { conference: current_user.conferences }

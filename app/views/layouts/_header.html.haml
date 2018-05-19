@@ -1,0 +1,13 @@
+%header.navbar.main-nav.container
+    %section.navbar-section.p-2
+        %a.navbar-brand.mr-2{ href: root_path } EventScheduler
+
+    %section.navbar-section
+        - if current_user
+            = link_to 'Sign Out', destroy_user_session_path, method: :delete
+
+        - else
+            .p-1
+                %a.btn.btn-primary{ href: "#" } Sign Up
+            .p-1
+                %a.btn.btn-secondary{ href: "#" } Login
