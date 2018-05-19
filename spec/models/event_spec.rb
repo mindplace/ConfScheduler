@@ -18,5 +18,33 @@
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  describe "attributes" do
+    it { is_expected.to respond_to(:name) }
+    it { is_expected.to respond_to(:host) }
+    it { is_expected.to respond_to(:description) }
+    it { is_expected.to respond_to(:location) }
+    it { is_expected.to respond_to(:event_type) }
+    it { is_expected.to respond_to(:starts_at) }
+    it { is_expected.to respond_to(:ends_at) }
+  end
+
+  describe "associations" do
+    it { is_expected.to belong_to(:conference) }
+    it { is_expected.to have_many(:event_attendees) }
+    it { is_expected.to have_many(:attendees) }
+  end
+
+  describe "validations" do
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_presence_of(:host) }
+    it { is_expected.to validate_presence_of(:description) }
+    it { is_expected.to validate_presence_of(:location) }
+    it { is_expected.to validate_presence_of(:event_type) }
+    it { is_expected.to validate_presence_of(:conference) }
+    it { is_expected.to validate_presence_of(:starts_at) }
+    it { is_expected.to validate_presence_of(:ends_at) }
+    it { is_expected.to validate_inclusion_of(:event_type).in_array(Event::EVENT_TYPES) }
+  end
+
 end

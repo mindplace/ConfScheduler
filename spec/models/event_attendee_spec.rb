@@ -12,5 +12,11 @@
 require 'rails_helper'
 
 RSpec.describe EventAttendee, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { build :event_attendee }
+
+  describe "associations" do
+    it { is_expected.to belong_to(:conf_attendee) }
+    it { is_expected.to belong_to(:event) }
+  end
+  
 end

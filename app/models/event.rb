@@ -18,11 +18,14 @@
 class Event < ApplicationRecord
 
   EVENT_TYPES_TO_COLORS = { panel: :blue, outdoor: :green, vip: :purple }
-  EVENT_TYPES = EVENT_TYPES_TO_COLORS.keys
+  EVENT_TYPES = EVENT_TYPES_TO_COLORS.keys.map(&:to_s)
 
   belongs_to :conference
 
   has_many :event_attendees
   has_many :attendees, through: :event_attendees, source: :conf_attendee
+
+  validates_presence_of(:name, :host, :description, :location, :event_type, :conference, :starts_at, :ends_at)
+  validates_inclusion_of :event_type, in: EVENT_TYPES
 
 end

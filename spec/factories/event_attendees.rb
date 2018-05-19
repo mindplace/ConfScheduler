@@ -9,3 +9,11 @@
 #  updated_at       :datetime         not null
 #
 
+FactoryBot.define do
+
+  factory :event_attendee do
+    conf_attendee
+    event
+  end
+
+end

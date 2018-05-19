@@ -9,3 +9,11 @@
 #  updated_at    :datetime         not null
 #
 
+FactoryBot.define do
+
+  factory :conf_admin do
+    admin
+    conference 
+  end
+
+end

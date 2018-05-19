@@ -15,3 +15,17 @@
 #  updated_at    :datetime         not null
 #
 
+FactoryBot.define do
+
+  factory :event do
+    name Faker::Zelda.game
+    host Faker::Name.name
+    description Faker::Lorem.paragraph
+    location Faker::Address.street_address
+    event_type Event::EVENT_TYPES.sample
+    conference
+    starts_at Time.now + 50.days
+    ends_at Time.now + 50.days + 2.hours
+  end
+
+end

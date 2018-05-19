@@ -12,5 +12,11 @@
 require 'rails_helper'
 
 RSpec.describe ConfAdmin, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { build :conf_admin }
+
+  describe "associations" do
+    it { is_expected.to belong_to(:admin) }
+    it { is_expected.to belong_to(:conference) }
+  end
+
 end
