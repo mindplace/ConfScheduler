@@ -16,7 +16,9 @@
 #
 
 class Event < ApplicationRecord
-  EVENT_TYPES = %w(panel outdoor vip)
+
+  EVENT_TYPES_TO_COLORS = { panel: :blue, outdoor: :green, vip: :purple }
+  EVENT_TYPES = EVENT_TYPES_TO_COLORS.keys
 
   belongs_to :conference
 

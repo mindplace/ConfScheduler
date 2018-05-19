@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180513044847) do
+ActiveRecord::Schema.define(version: 20180519201913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_admins_on_user_id"
+  end
+
+  create_table "conf_admins", force: :cascade do |t|
+    t.bigint "admin_id"
+    t.bigint "conference_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_conf_admins_on_admin_id"
+    t.index ["conference_id"], name: "index_conf_admins_on_conference_id"
+  end
 
   create_table "conf_attendees", force: :cascade do |t|
     t.bigint "user_id"

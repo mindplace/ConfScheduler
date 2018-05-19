@@ -18,6 +18,7 @@
 #
 
 class User < ApplicationRecord
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
@@ -25,4 +26,8 @@ class User < ApplicationRecord
   has_many :conf_attendees
   has_many :conferences, through: :conf_attendees
   has_many :events, through: :conferences, as: :attendee
+
+  has_one :admin_account, class_name: "Admin"
+  has_many :conf_admin_accounts, through: :admin_account, source: :conf_admins, class_name: "ConfAdmin"
+
 end

@@ -14,9 +14,8 @@
 
 class Conference < ApplicationRecord
 
+  has_many :conf_admins
   has_many :conf_attendees
-  has_many :users, through: :conf_attendees
-  # has_many :admins, -> { where(admin: true) }, class_name: "User"
 
   has_many :events
 
