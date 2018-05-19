@@ -5,11 +5,12 @@ class CreateEvents < ActiveRecord::Migration[5.1]
       t.string :host, null: false
       t.text :description
       t.string :location
+      t.string :event_type
 
       t.references :conference
 
-      t.datetime :starts
-      t.datetime :ends
+      t.datetime :starts_at
+      t.datetime :ends_at
 
       t.timestamps
     end

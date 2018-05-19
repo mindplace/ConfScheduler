@@ -6,8 +6,8 @@
 #  name        :string           not null
 #  url         :string           not null
 #  description :text
-#  start_day   :date             not null
-#  end_day     :date             not null
+#  start_date  :date             not null
+#  end_date    :date             not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

@@ -1,33 +1,28 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
 conf_seeds = [
   {
     name: 'RubyConf',
     url: 'rubyconf',
     description: "A beautiful Ruby conference",
-    start_day: Date.today + 100.days,
-    end_day: Date.today + 103.days
+    start_date: Date.today + 100.days,
+    end_date: Date.today + 103.days
   },
 
   {
     name: 'Wizards United',
     url: 'wizards-together',
     description: "Magic is in the air",
-    start_day: Date.today + 200.days,
-    end_day: Date.today + 203.days
+    start_date: Date.today + 200.days,
+    end_date: Date.today + 203.days
   }
 ]
 
 conf_seeds.each do |seed_values|
   Conference.create(seed_values)
 end
-
 
 events = [
   {
@@ -36,8 +31,9 @@ events = [
     description: "Honestly it really is great. No questions. Also no answers. Yay!",
     location: "Second floor",
     conference_id: 1,
-    starts: DateTime.now + 100.days + 2.hours,
-    ends: DateTime.now + 100.days + 3.hours
+    event_type: "panel",
+    starts_at: DateTime.now + 100.days + 2.hours,
+    ends_at: DateTime.now + 100.days + 3.hours
   },
 
   {
@@ -46,8 +42,9 @@ events = [
     description: "Actually we like this one as is. But needed something to discuss.",
     location: "Lobby",
     conference_id: 1,
-    starts: DateTime.now + 101.days + 2.hours,
-    ends: DateTime.now + 101.days + 3.hours
+    event_type: "panel",
+    starts_at: DateTime.now + 101.days + 2.hours,
+    ends_at: DateTime.now + 101.days + 3.hours
   },
 
   {
@@ -56,8 +53,9 @@ events = [
     description: "Coding is kind of like magic, isn't it?",
     location: "First floor",
     conference_id: 2,
-    starts: DateTime.now + 200.days + 2.hours,
-    ends: DateTime.now + 200.days + 3.hours
+    event_type: "panel",
+    starts_at: DateTime.now + 200.days + 2.hours,
+    ends_at: DateTime.now + 200.days + 3.hours
   },
 
   {
@@ -66,8 +64,9 @@ events = [
     description: "Let's discuss this extensive and curious topic.",
     location: "Outside",
     conference_id: 2,
-    starts: DateTime.now + 201.days + 2.hours,
-    ends: DateTime.now + 201.days + 3.hours
+    event_type: "panel",
+    starts_at: DateTime.now + 201.days + 2.hours,
+    ends_at: DateTime.now + 201.days + 3.hours
   }
 ]
 

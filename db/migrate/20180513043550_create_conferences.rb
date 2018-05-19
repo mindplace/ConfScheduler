@@ -5,8 +5,8 @@ class CreateConferences < ActiveRecord::Migration[5.1]
       t.string :url, null: false
       t.text :description
 
-      t.date :start_day, null: false
-      t.date :end_day, null: false
+      t.date :start_date, null: false
+      t.date :end_date, null: false
 
       t.timestamps
     end

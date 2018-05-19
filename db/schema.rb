@@ -28,20 +28,20 @@ ActiveRecord::Schema.define(version: 20180513044847) do
     t.string "name", null: false
     t.string "url", null: false
     t.text "description"
-    t.date "start_day", null: false
-    t.date "end_day", null: false
+    t.date "start_date", null: false
+    t.date "end_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name", "url"], name: "index_conferences_on_name_and_url", unique: true
   end
 
   create_table "event_attendees", force: :cascade do |t|
-    t.bigint "user_id"
+    t.bigint "conf_attendee_id"
     t.bigint "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["conf_attendee_id"], name: "index_event_attendees_on_conf_attendee_id"
     t.index ["event_id"], name: "index_event_attendees_on_event_id"
-    t.index ["user_id"], name: "index_event_attendees_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -49,9 +49,10 @@ ActiveRecord::Schema.define(version: 20180513044847) do
     t.string "host", null: false
     t.text "description"
     t.string "location"
+    t.string "event_type"
     t.bigint "conference_id"
-    t.datetime "starts"
-    t.datetime "ends"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["conference_id"], name: "index_events_on_conference_id"

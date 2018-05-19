@@ -14,4 +14,6 @@ class ConfAttendee < ApplicationRecord
   belongs_to :user
   belongs_to :conference
 
+  has_many :events
+
 end
