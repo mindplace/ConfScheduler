@@ -19,4 +19,17 @@ class Conference < ApplicationRecord
 
   has_many :events
 
+  # -- Attendee methods ------------------------------------------
+
+  def attend_as_admin(user = nil)
+    return false unless user && user.admin?
+    conf_admins.find_or_create_by(admin_id: user.admin_account.id)
+    attend_as_attendee(user)
+  end
+
+  def attend_as_attendee(user = nil)
+    return false unless user
+    conf_attendees.find_or_create_by(user_id: user.id)
+  end
+  
 end

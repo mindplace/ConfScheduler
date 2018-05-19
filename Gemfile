@@ -54,18 +54,20 @@ gem 'haml-rails'
 gem 'jquery-rails'
 
 # Supports deployment to Heroku by making it easier to manage configurations
-gem 'figaro', '~> 1.1.1'
+gem 'figaro'
 
 group :development, :test do
   # Call 'binding.pry' anywhere in the code to stop execution and get a debugger console
   gem 'pry-rails'
 
-  gem 'rspec-rails', '~> 3.5'
-  gem 'factory_bot', '~> 4.8.2'
-  gem 'shoulda-matchers', '~> 3.1', require: false
+  gem 'rspec-rails'
+  gem 'factory_bot'
+  gem 'shoulda-matchers'
 
   # Run 'annotate app/models/[model file]' to populate info about that model's schema in the model file
   gem 'annotate'
+
+  gem 'faker'
 end
 
 group :development do
