@@ -1,5 +1,8 @@
-.container
-    %h1 Conferences
+.bg-gray.section.section-hero.section-hero.section
+    .container.grid-md.grid-hero
+        %h1 Conferences
 
-    .columns
-        = render partial: "conference", collection: @conferences, locals: { conference: @conferences }
+.section.section-hero
+    .container.grid-md
+        .columns
+            = render partial: "conference", collection: @conferences, locals: { conference: @conferences }

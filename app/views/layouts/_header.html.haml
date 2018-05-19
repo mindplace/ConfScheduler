@@ -1,4 +1,4 @@
-%header.navbar.main-nav.container
+%header.navbar.main-nav.container.bg-gray
     %section.navbar-section.p-2
         %a.navbar-brand.mr-2{ href: root_path } EventScheduler
 
@@ -8,6 +8,6 @@
 
         - else
             .p-1
-                %a.btn.btn-primary{ href: "#" } Sign Up
+                %a.btn.btn-primary{ href: new_user_registration_path } Sign Up
             .p-1
-                %a.btn.btn-secondary{ href: "#" } Login
+                %a{ href: new_user_session_path } Login

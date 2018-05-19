@@ -1,7 +1,14 @@
-.column.col-2.col-mx-auto
-    %h4= event.name
-    %p= event.description
-    %p= event.location
-    %p= event.starts_at
-    %p= event.ends_at
-    %p= "#{event.attendees.count} Attendees"
+.column.col-4
+    .card
+        .card-header
+            %h4= event.name
+
+        .card-body
+            %p= event.description
+            %p= event.location
+            %p= event.starts_at
+            %p= event.ends_at
+            %p= "#{event.attendees.count} Attendees"
+
+        .card-footer
+            %a.btn.btn-primary{ href: "#" } Add to schedule

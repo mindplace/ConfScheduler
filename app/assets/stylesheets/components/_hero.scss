@@ -1,0 +1,15 @@
+@import "mixins";
+@import "variables";
+
+// -- Hero -----------------------
+
+.section-hero {
+  @include top-bottom-padding;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.grid-hero {
+  padding-bottom: 2rem;
+  padding-top: 6rem;
+}

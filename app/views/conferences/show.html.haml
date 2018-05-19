@@ -1,16 +1,20 @@
-.bg-gray
-    %h1= @conference.name
-    %p= @conference.description
-    %p= @conference.start_date
-    %p= @conference.end_date
+.bg-gray.section.section-hero.section-hero.section
+    .container.grid-md.grid-hero
+        %h1= @conference.name
+        %p= @conference.description
+        %p= @conference.start_date
+        %p= @conference.end_date
 
-    - unless attending_conference?(@conference)
-        = link_to "Attend", conference_conf_attendees_path(conference_id: @conference.id), method: :post
-    - else
-        %strong You're attending.
+        - unless attending_conference?(@conference)
+            = link_to "Attend", conference_conf_attendees_path(conference_id: @conference.id), method: :post
+        - else
+            %strong You're attending.
 
-.container
-    .columns
-        = render partial: "events/event", collection: @events, locals: { event: @events }
+.section.section-hero
+    .container.grid-md
+        .columns
+            = render partial: "events/event", collection: @events, locals: { event: @events }
 
-    %a.btn{ href: conferences_path } Back to Conferences List
+.section.section-hero.text-center.bg-gray
+    .container.grid-md
+        %a{ href: conferences_path } << Back to Conferences List
