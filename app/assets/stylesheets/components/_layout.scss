@@ -3,7 +3,9 @@
 
 // -- Layout -----------------------
 
-.container {
-  padding-left: 1rem;
-  padding-right: 1rem;
+.top-flex-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

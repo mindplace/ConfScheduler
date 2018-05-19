@@ -6,3 +6,12 @@
 .top-bottom-padding {
   @include top-bottom-padding;
 }
+
+.u-full-width {
+  width: 100%;
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}

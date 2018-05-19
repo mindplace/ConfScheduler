@@ -14,7 +14,8 @@
     %body
         = render partial: "layouts/header"
 
-        .main-content
-            = yield
+        .top-flex-wrapper
+            .main-content
+                = yield
 
-        = render partial: "layouts/footer"
+            = render partial: "layouts/footer"
