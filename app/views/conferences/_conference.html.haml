@@ -15,4 +15,4 @@
             %a.btn.btn-primary{ href: conference_show_path(url: conference.url) } View
 
             - unless attending_conference?(conference)
-                = link_to "Attend", conference_events_path(conference_id: conference.id), method: :post, class: "btn btn-secondary"
+                = link_to "Save Conference", conference_events_path(conference_id: conference.id), method: :post, class: "btn btn-secondary"
