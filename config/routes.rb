@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "home#index"
+  root to: "conferences#index"
 
   # Devise user authentication ----------------------------------------------------------------------
   devise_for :users, controllers: { registrations: "users/registrations", sessions: "users/sessions" }
@@ -14,7 +14,10 @@ Rails.application.routes.draw do
   resources :users
   get "profile", to: "users#show", as: "profile_show"
 
-  resources :conferences
-  get ":url", to: 'conferences#show', as: "conference_show"
+  resources :conferences do
+    resources :events
+    resources :conf_attendees
+  end
 
+  get ":url", to: 'conferences#show', as: "conference_show"
 end
