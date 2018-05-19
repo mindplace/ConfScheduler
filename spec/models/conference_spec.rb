@@ -75,6 +75,6 @@ RSpec.describe Conference, type: :model do
   end
 
   describe "#attend_as_admin" do
-    # TODO -- add this test 
+    # TODO -- add this test
   end
 end

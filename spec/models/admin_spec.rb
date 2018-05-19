@@ -11,5 +11,12 @@
 require 'rails_helper'
 
 RSpec.describe Admin, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { build :admin }
+
+  describe "associations" do
+    it { is_expected.to belong_to(:user) }
+    it { is_expected.to have_many(:conf_admins) }
+    it { is_expected.to have_many(:conferences) }
+  end
+
 end
