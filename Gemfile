@@ -38,9 +38,6 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
-# Run 'annotate app/models/[model file]' to populate info about that model's schema in the model file
-gem 'annotate'
-
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 
@@ -56,6 +53,9 @@ gem 'haml-rails'
 # Use jQuery with UJS
 gem 'jquery-rails'
 
+# Supports deployment to Heroku by making it easier to manage configurations
+gem 'figaro', '~> 1.1.1'
+
 group :development, :test do
   # Call 'binding.pry' anywhere in the code to stop execution and get a debugger console
   gem 'pry-rails'
@@ -63,6 +63,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_bot', '~> 4.8.2'
   gem 'shoulda-matchers', '~> 3.1', require: false
+
+  # Run 'annotate app/models/[model file]' to populate info about that model's schema in the model file
+  gem 'annotate'
 end
 
 group :development do
