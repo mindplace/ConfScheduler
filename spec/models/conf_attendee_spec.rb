@@ -12,5 +12,13 @@
 require 'rails_helper'
 
 RSpec.describe ConfAttendee, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { create :conf_attendee }
+
+  describe "associations" do
+    it { is_expected.to belong_to(:user) }
+    it { is_expected.to belong_to(:conference) }
+    it { is_expected.to have_many(:event_attendees) }
+    it { is_expected.to have_many(:events) }
+  end
+
 end

@@ -9,12 +9,11 @@
 #  updated_at    :datetime         not null
 #
 
-class ConfAttendee < ApplicationRecord
+FactoryBot.define do
 
-  belongs_to :user
-  belongs_to :conference
-
-  has_many :event_attendees
-  has_many :events, through: :event_attendees
+  factory :conf_attendee do
+    user
+    conference 
+  end
 
 end
